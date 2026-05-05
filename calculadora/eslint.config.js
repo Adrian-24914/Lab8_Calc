@@ -18,5 +18,10 @@ export default defineConfig([
     languageOptions: {
       globals: globals.browser,
     },
+    rules: {
+      semi: ['error', 'never'],
+      'max-len': ['error', { code: 120 }],
+      quotes: ['error', 'single'],
+    },
   },
 ])
