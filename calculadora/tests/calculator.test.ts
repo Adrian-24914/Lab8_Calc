@@ -43,6 +43,14 @@ describe('calculator engine', () => {
     expect(calculate('999999999', '2', '*')).toBe('ERROR')
   })
 
+  test('does not keep a pending operator after an intermediate error', () => {
+    const first = chooseOperator(enter(clearCalculator(), '3'), '-')
+    const result = chooseOperator(enter(first, '8'), '+')
+
+    expect(result.display).toBe('ERROR')
+    expect(result.operator).toBeNull()
+  })
+
   test('formats long decimal division results into the nine character display', () => {
     expect(calculate('22', '7', '/')).toBe('3.1428571')
   })

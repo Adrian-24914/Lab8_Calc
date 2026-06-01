@@ -9,12 +9,14 @@ Calculadora hecha con React, TypeScript, Vite y Bun para el laboratorio de compo
 ## Instalacion
 
 ```bash
+cd calculadora
 bun install
 ```
 
 ## Correr la aplicacion
 
 ```bash
+cd calculadora
 bun run dev
 ```
 
@@ -23,26 +25,30 @@ Vite mostrara la URL local para abrir la aplicacion en el navegador.
 ## Tests
 
 ```bash
+cd calculadora
 bun test
 ```
 
 Tambien se puede correr desde el script del proyecto:
 
 ```bash
+cd calculadora
 bun run test
 ```
 
 ## Lint
 
 ```bash
+cd calculadora
 bun run lint
 ```
 
-El lint valida archivos TypeScript y TSX, prohibe punto y coma, y limita las lineas a 120 caracteres.
+El lint valida archivos JS, JSX, TypeScript y TSX, prohibe punto y coma, y limita las lineas a 120 caracteres.
 
 ## Storybook
 
 ```bash
+cd calculadora
 bun run storybook
 ```
 
@@ -56,6 +62,7 @@ Historias incluidas:
 ## Build
 
 ```bash
+cd calculadora
 bun run build
 ```
 

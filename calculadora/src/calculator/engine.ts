@@ -80,7 +80,8 @@ export const toggleSign = (state: CalculatorState): CalculatorState => {
 export const chooseOperator = (state: CalculatorState, operator: OperatorKey): CalculatorState => {
   if (isError(state.display)) return state
   if (state.operator !== null && !state.shouldResetDisplay) {
-    return { ...withResult(state, calculate(state.operand, state.display, state.operator)), operator }
+    const nextState = withResult(state, calculate(state.operand, state.display, state.operator))
+    return isError(nextState.display) ? nextState : { ...nextState, operator }
   }
 
   return { ...state, operator, operand: state.display, shouldResetDisplay: true }
