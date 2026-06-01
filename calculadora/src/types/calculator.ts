@@ -1,4 +1,5 @@
-export type Operator = '+' | '-' | '*' | '/' | '%' | null
+export type OperatorKey = '+' | '-' | '*' | '/' | '%'
+export type Operator = OperatorKey | null
 
 export interface CalculatorState {
   display: string
@@ -10,7 +11,7 @@ export interface CalculatorState {
 export interface UseCalculatorReturn {
   display: string
   pressDigit: (digit: string) => void
-  pressOperator: (op: Operator) => void
+  pressOperator: (op: OperatorKey) => void
   pressEquals: () => void
   pressDot: () => void
   pressToggleSign: () => void
