@@ -1,11 +1,12 @@
 import { buttonVariantFor } from '../calculator/buttonVariant'
 import { keypadKeys } from '../calculator/keypad'
+import { moveKeypadFocus } from '../calculator/moveKeypadFocus'
 import { pressKey, type CalculatorActions } from '../calculator/pressKey'
 import { Button } from './Button'
 
 export function Keypad(actions: CalculatorActions) {
   return (
-    <div className="keypad" role="group" aria-label="Teclado de calculadora">
+    <div className="keypad" role="group" aria-label="Teclado" onKeyDown={moveKeypadFocus}>
       {keypadKeys.map((key) => (
         <Button
           key={key.id}
