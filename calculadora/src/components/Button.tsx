@@ -7,7 +7,12 @@ type ButtonProps = {
 
 export function Button({ label, ariaLabel, variant = 'number', onPress }: ButtonProps) {
   return (
-    <button className={`calc-button calc-button--${variant}`} type="button" aria-label={ariaLabel} onClick={onPress}>
+    <button
+      className={`calc-button calc-button--${variant}`}
+      type="button"
+      aria-label={ariaLabel}
+      onClick={onPress}
+    >
       {label}
     </button>
   )

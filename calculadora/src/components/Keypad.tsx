@@ -1,9 +1,7 @@
+import { buttonVariantFor } from '../calculator/buttonVariant'
 import { keypadKeys } from '../calculator/keypad'
 import { pressKey, type CalculatorActions } from '../calculator/pressKey'
 import { Button } from './Button'
-
-const variantFor = (key: (typeof keypadKeys)[number]) =>
-  key.kind === 'operator' ? 'operator' : key.kind === 'action' && key.action === 'equals' ? 'equals' : key.kind
 
 export function Keypad(actions: CalculatorActions) {
   return (
@@ -13,7 +11,7 @@ export function Keypad(actions: CalculatorActions) {
           key={key.id}
           label={key.label}
           ariaLabel={key.ariaLabel}
-          variant={variantFor(key)}
+          variant={buttonVariantFor(key)}
           onPress={() => pressKey(key, actions)}
         />
       ))}
